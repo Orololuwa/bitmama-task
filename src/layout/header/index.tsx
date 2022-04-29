@@ -1,9 +1,10 @@
 import CustomLink from "components/links/tabs";
 import { Icon } from "@iconify/react";
+import "./header.css";
 
 const Header = (): JSX.Element => {
   return (
-    <header className="flex mt-4 ml-96">
+    <header className="flex mt-4 pl-96 relative">
       <CustomLink to="/overview">
         <span className="flex gap-2 items-center">
           <Icon icon="octicon:book-16" />
