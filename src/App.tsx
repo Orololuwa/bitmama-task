@@ -1,6 +1,9 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import { useRoutes } from "react-router";
+import routes from "routes";
+import { Suspense } from "react";
 import { getAuth, GithubAuthProvider, signInWithPopup } from "firebase/auth";
 import app from "./config/firebase-config";
 
@@ -8,6 +11,8 @@ const auth = getAuth(app);
 const provider = new GithubAuthProvider();
 
 function App() {
+  const routesHere = useRoutes(routes);
+
   const handleClick = async () => {
     try {
       const res = await signInWithPopup(auth, provider);
@@ -17,25 +22,7 @@ function App() {
     }
   };
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <button onClick={handleClick}>github</button>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <Suspense fallback={<div>loading...</div>}>{routesHere}</Suspense>;
 }
 
 export default App;
