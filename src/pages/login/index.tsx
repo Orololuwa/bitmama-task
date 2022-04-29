@@ -1,17 +1,34 @@
 import { getAuth, GithubAuthProvider, signInWithPopup } from "firebase/auth";
 import app from "config/firebase-config";
 import "./login.css";
+import { useAppDispatch } from "store/hooks";
+import { loginBegin, loginError, loginSuccess } from "store/auth/authSlice";
+import ExpirySession from "utils/expirysession";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const auth = getAuth(app);
 const provider = new GithubAuthProvider();
 
 const Login = (): JSX.Element => {
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+
   const handleClick = async () => {
+    dispatch(loginBegin());
+
     try {
       const res = await signInWithPopup(auth, provider);
-      console.log(res);
+      const credential = GithubAuthProvider.credentialFromResult(res);
+      const token = credential?.accessToken;
+
+      ExpirySession.set("access_token", token);
+      dispatch(loginSuccess(true));
+
+      navigate("/", { replace: true });
+
+      const user = res.user;
     } catch (err) {
-      console.log(err);
+      dispatch(loginError());
     }
   };
 

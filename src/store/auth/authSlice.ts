@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import LocalStorage from "utils/localstorage";
 
 interface AuthState {
   isLoggedIn: boolean;
@@ -7,7 +8,7 @@ interface AuthState {
 }
 
 const initialState: AuthState = {
-  isLoggedIn: false,
+  isLoggedIn: LocalStorage.get("access_token") || false,
   loading: false,
   error: false
 };
