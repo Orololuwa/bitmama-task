@@ -9,9 +9,9 @@ const CustomLink = ({ children, to, ...props }: LinkProps) => {
     <Link
       to={to}
       className={cn({
-        "flex items-center text-md text-gray-400 hover:text-yellow-300 hover:font-bold transition-all px-4 border-b-4 border-transparent":
+        "flex items-center text-md text-gray-800  px-4 py-3 border-b-4 border-transparent":
           true,
-        "text-yellow-300 font-bold border-b-4 border-yellow-300 w-max": match
+        "font-semibold border-b-4 border-orange-300 w-max": match
       })}
       {...props}
     >
