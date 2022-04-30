@@ -2,12 +2,13 @@ import { Icon } from "@iconify/react";
 
 const Aside = (): JSX.Element => {
   return (
-    <aside className="basis-1/4 px-4">
+    <aside className="md:absolute top-10 left-10 lg:left-20 w-80 px-4 bg-transparent">
       <div className="w-full">
         <img
           src="https://avatars.githubusercontent.com/u/67964734?v=4"
           alt="avatar"
-          className="rounded-[50%] w-full"
+          className="w-full inline-block overflow-hidden shadow-sm"
+          style={{ clipPath: "circle(50% at 50% 50%)" }}
         />
       </div>
       <div className="flex flex-col gap-4 my-4">

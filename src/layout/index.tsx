@@ -6,15 +6,13 @@ import Main from "./content/main";
 
 const Layout = (): JSX.Element => {
   return (
-    <>
+    <div className="relative">
+      <Aside />
       <Header />
       <Content>
-        <Aside />
-        <Main>
-          <Outlet />
-        </Main>
+        <Outlet />
       </Content>
-    </>
+    </div>
   );
 };
 

@@ -4,9 +4,8 @@ import "./header.css";
 
 const Header = (): JSX.Element => {
   return (
-    <header className="flex px-20 relative">
-      <div className="basis-1/4" />
-      <div className="flex mt-4">
+    <header className="flex md:pl-96 lg:pl-[420px] relative">
+      <div className="flex mt-4 w-full">
         <CustomLink to="/overview">
           <span className="flex gap-2 items-center">
             <Icon icon="octicon:book-16" />
