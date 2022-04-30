@@ -50,9 +50,10 @@
 }
 .buttons-green {
   color: white !important;
-  background-color: #2ea44f !important;
+  background-color: #36ad58 !important;
   padding: 0px 16px !important;
   margin-left: 5px !important;
+  gap: 2px;
 }
 
 .buttons-green:hover {
