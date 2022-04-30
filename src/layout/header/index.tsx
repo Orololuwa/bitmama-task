@@ -4,7 +4,7 @@ import "./header.css";
 
 const Header = (): JSX.Element => {
   return (
-    <header className="flex md:pl-96 lg:pl-[420px] relative">
+    <header className="flex md:pl-96 lg:pl-[420px] relative overflow-y-scroll no-scrollbar">
       <div className="flex mt-4 w-full">
         <CustomLink to="/overview">
           <span className="flex gap-2 items-center">
