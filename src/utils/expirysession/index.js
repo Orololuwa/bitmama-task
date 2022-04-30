@@ -30,6 +30,7 @@ class ExpirySession {
   static clear = () => {
     LocalStorage.remove("access_token");
     LocalStorage.remove("isLoggedIn");
+    LocalStorage.remove("user");
   };
 }
 
