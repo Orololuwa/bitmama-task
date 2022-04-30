@@ -2,7 +2,7 @@ import { Icon } from "@iconify/react";
 
 const Aside = (): JSX.Element => {
   return (
-    <aside className="md:absolute top-10 left-10 lg:left-20 w-80 px-4 bg-transparent z-10">
+    <aside className="md:absolute top-10 left-10 lg:left-20 xl:left-80 px-4 w-80 bg-transparent z-10">
       <div className="w-full">
         <img
           src="https://avatars.githubusercontent.com/u/67964734?v=4"

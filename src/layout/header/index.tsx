@@ -1,10 +1,10 @@
 import CustomLink from "components/links/tabs";
 import { Icon } from "@iconify/react";
-import "./header.css";
+// import "./header.css";
 
 const Header = (): JSX.Element => {
   return (
-    <header className="flex md:pl-96 lg:pl-[420px] relative overflow-y-scroll no-scrollbar">
+    <header className="flex md:pl-96 lg:pl-[420px] xl:pl-[650px] relative overflow-y-scroll no-scrollbar border-b-2">
       <div className="flex mt-4 w-full">
         <CustomLink to="/overview">
           <span className="flex gap-2 items-center">
