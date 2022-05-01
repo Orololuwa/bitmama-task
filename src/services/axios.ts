@@ -19,10 +19,9 @@ export const authHeader = async (headers: AxiosRequestHeaders | undefined) => {
   };
 };
 
-const adminInstance = axios.create({
+const userInstance = axios.create({
   baseURL: BASE_URL,
   headers: {
-    Authorization: `Bearer ${LocalStorage.get("access_token")}`,
     "Content-Type": "application/json"
   }
 });
@@ -32,7 +31,7 @@ const adminInstance = axios.create({
  * For more details on axios interceptor see https://github.com/axios/axios#interceptors
  */
 
-adminInstance.interceptors.request.use(async (config) => {
+userInstance.interceptors.request.use(async (config) => {
   // do something before executing the request
   // For example tag along the bearer access_token token to request header or set a cookie
   const requestConfig = config;
@@ -46,7 +45,7 @@ adminInstance.interceptors.request.use(async (config) => {
   return requestConfig;
 });
 
-adminInstance.interceptors.response.use(
+userInstance.interceptors.response.use(
   (response) => response,
   (error) => {
     /**
@@ -66,4 +65,4 @@ adminInstance.interceptors.response.use(
   }
 );
 
-export { adminInstance, authInstance };
+export { userInstance, authInstance };

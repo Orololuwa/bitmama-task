@@ -1,24 +1,26 @@
-import { adminInstance } from "./axios";
+import { userInstance } from "./axios";
 import QueryString from "qs";
 
+export interface RepoQParams {
+  per_page: number;
+  sort: "created" | "updated" | "pushed" | "fullname";
+}
+
 class UserService {
-  async getUser() {
+  async getUser(): Promise<any> {
     return new Promise((resolve, reject) => {
-      adminInstance
+      userInstance
         .get("/user")
         .then((response) => resolve(response))
         .catch((error) => reject(error));
     });
   }
 
-  async getRepos(queryParams: {
-    per_page: number;
-    sort: "created" | "updated" | "pushed" | "fullname";
-  }) {
+  async getRepos(queryParams: RepoQParams): Promise<any> {
     const query = QueryString.stringify(queryParams);
     return new Promise((resolve, reject) => {
-      adminInstance
-        .get("/user/repo?" + query)
+      userInstance
+        .get("/user/repos?" + query)
         .then((response) => resolve(response))
         .catch((error) => reject(error));
     });
