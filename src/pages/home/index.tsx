@@ -22,7 +22,7 @@ const Home = (): JSX.Element => {
               <span>Language</span>
               <FaCaretDown />
             </button>
-            <button>
+            <button className="relative">
               <span>Sort</span>
               <FaCaretDown />
             </button>

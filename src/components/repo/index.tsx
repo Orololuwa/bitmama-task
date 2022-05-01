@@ -48,7 +48,7 @@ const Repo = (props: RepoType): JSX.Element => {
             <Icon icon="octicon:star-16" />
             <p>1</p>
           </span>
-          <span>{dateFormatter(new Date(Date.now()))}</span>
+          <span>{dateFormatter(new Date(props.updated_at))}</span>
         </div>
       </div>
     </div>
