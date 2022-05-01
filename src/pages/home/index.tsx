@@ -2,8 +2,10 @@ import "./actions.css";
 import { FaCaretDown } from "react-icons/fa";
 import { Icon } from "@iconify/react";
 import Repo from "components/repo";
+import { useAppSelector } from "store/hooks";
 
 const Home = (): JSX.Element => {
+  const repos = useAppSelector((state) => state.repos.data);
   return (
     <div>
       <div className="action">
@@ -31,10 +33,20 @@ const Home = (): JSX.Element => {
           </div>
         </div>
       </div>
-      <div>
-        <Repo />
-        <Repo />
-      </div>
+      {!!repos.length ? (
+        <div>
+          {repos.map((repl) => (
+            <Repo
+              key={repl.id}
+              name={repl.name}
+              description={repl.description}
+              language={repl.language}
+              visibility={repl.visibility}
+              updated_at={repl.updated_at}
+            />
+          ))}
+        </div>
+      ) : null}
     </div>
   );
 };

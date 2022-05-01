@@ -16,7 +16,7 @@ const Aside = (): JSX.Element | null => {
         <h3 className="text-xl md:mt-4 text-gray-500">{data?.login}</h3>
       </div>
       <div className="flex flex-col gap-4 my-4">
-        <button className="bg-gray-100 hover:border-gray-400 border-[1px] border-gray-300 px-4 py-2 w-full rounded-md transition-colors">
+        <button className="bg-gray-100 hover:border-gray-400 border-[1px] border-gray-300 px-4 py-2 w-full rounded-md transition-colors text-gray-700">
           Follow
         </button>
         <p>{data?.bio}</p>
