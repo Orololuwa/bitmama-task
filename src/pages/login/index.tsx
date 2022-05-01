@@ -4,8 +4,8 @@ import "./login.css";
 import { useAppDispatch } from "store/hooks";
 import { loginBegin, loginError, loginSuccess } from "store/auth/authSlice";
 import ExpirySession from "utils/expirysession";
-import { useLocation, useNavigate } from "react-router-dom";
-import LocalStorage from "utils/localstorage";
+import { useNavigate } from "react-router-dom";
+import { useToasts } from "react-toast-notifications";
 
 const auth = getAuth(app);
 const provider = new GithubAuthProvider();
@@ -13,6 +13,7 @@ const provider = new GithubAuthProvider();
 const Login = (): JSX.Element => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+  const { addToast } = useToasts();
 
   const handleClick = async () => {
     dispatch(loginBegin());
@@ -27,9 +28,12 @@ const Login = (): JSX.Element => {
 
       navigate("/", { replace: true });
 
-      const user = res.user;
+      console.log(res);
     } catch (err) {
       dispatch(loginError());
+      addToast("Error loging in! Please try again", {
+        appearance: "error"
+      });
     }
   };
 
