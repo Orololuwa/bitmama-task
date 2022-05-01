@@ -1,6 +1,7 @@
 import "./actions.css";
 import { FaCaretDown } from "react-icons/fa";
 import { Icon } from "@iconify/react";
+import Repo from "components/repo";
 
 const Home = (): JSX.Element => {
   return (
@@ -30,7 +31,10 @@ const Home = (): JSX.Element => {
           </div>
         </div>
       </div>
-      <div>fgiooofdigj</div>
+      <div>
+        <Repo />
+        <Repo />
+      </div>
     </div>
   );
 };

@@ -30,8 +30,8 @@
 }
 
 .buttons div button {
-  background-color: #d1d5da;
-  border: 1px solid #b1b4b8;
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
   color: #24292e;
   outline: none;
   box-shadow: none;
@@ -45,9 +45,21 @@
   height: 35px;
   margin: 0 1px;
 }
-.buttons div button:hover {
+
+.buttons div button > .divider {
+  border-right: 1px solid #d1d5db;
+  display: inline-flex;
+  align-items: center;
+  height: 35px;
+  padding: 0 0.5rem;
+  transition: all 0.3s;
+}
+
+.buttons div button:hover,
+.buttons div button:hover > .divider {
   border-color: #4b4b4b;
 }
+
 .buttons-green {
   color: white !important;
   background-color: #36ad58 !important;

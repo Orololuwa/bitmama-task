@@ -1,6 +1,7 @@
 import "./header.css";
 import { FaGithub, FaBars, FaBell } from "react-icons/fa";
 import { Icon } from "@iconify/react";
+import { Link } from "react-router-dom";
 
 const Header = (): JSX.Element => {
   return (
@@ -22,16 +23,16 @@ const Header = (): JSX.Element => {
                 </div>
               </li>
               <li>
-                <a href="#">Pulls</a>
+                <Link to="#">Pulls</Link>
               </li>
               <li>
-                <a href="#">Issues</a>
+                <Link to="#">Issues</Link>
               </li>
               <li>
-                <a href="#">Marketplace</a>
+                <Link to="#">Marketplace</Link>
               </li>
               <li>
-                <a href="#">Explore</a>
+                <Link to="#">Explore</Link>
               </li>
             </ul>
           </div>
@@ -53,24 +54,24 @@ const Header = (): JSX.Element => {
             </div>
           </li>
           <li>
-            <a href="#">Dashboard</a>
+            <Link to="#">Dashboard</Link>
           </li>
           <li>
-            <a href="#">Pull requests</a>
+            <Link to="#">Pull requests</Link>
           </li>
           <li>
-            <a href="#">Issues</a>
+            <Link to="#">Issues</Link>
           </li>
           <li>
-            <a href="#">Marketplace</a>
+            <Link to="#">Marketplace</Link>
           </li>
           <li>
-            <a href="#">Explore</a>
+            <Link to="#">Explore</Link>
           </li>
           <li className="user">
             <div>
               <img src="" alt="userAvatar" id="dropdownImg" />
-              <a href="#" className="username"></a>
+              <Link to="#" className="username"></Link>
             </div>
           </li>
           <li>
