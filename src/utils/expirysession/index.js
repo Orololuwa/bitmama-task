@@ -16,7 +16,7 @@ class ExpirySession {
     return null;
   };
 
-  static set = (key, value, expirationInSeconds = 900) => {
+  static set = (key, value, expirationInSeconds = 2700) => {
     let expirationDate = new Date(
       new Date().getTime() + 1000 * expirationInSeconds
     ); // create new expiring date.

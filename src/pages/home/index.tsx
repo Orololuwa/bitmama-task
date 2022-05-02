@@ -7,7 +7,7 @@ import SortDropdown from "./sortDropdown";
 import { useState } from "react";
 
 const Home = (): JSX.Element => {
-  const repos = useAppSelector((state) => state.repos.data);
+  const repos = useAppSelector((state) => state.repos);
 
   const [sortDropdownShow, setSortDropdownShow] = useState<boolean>(false);
 
@@ -47,9 +47,9 @@ const Home = (): JSX.Element => {
           </div>
         </div>
       </div>
-      {!!repos.length ? (
+      {!!repos.data ? (
         <div>
-          {repos.map((repl) => (
+          {repos.data.map((repl) => (
             <Repo
               key={repl.id}
               name={repl.name}
