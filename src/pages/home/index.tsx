@@ -3,9 +3,22 @@ import { FaCaretDown } from "react-icons/fa";
 import { Icon } from "@iconify/react";
 import Repo from "components/repo";
 import { useAppSelector } from "store/hooks";
+import SortDropdown from "./sortDropdown";
+import { useState } from "react";
 
 const Home = (): JSX.Element => {
   const repos = useAppSelector((state) => state.repos.data);
+
+  const [sortDropdownShow, setSortDropdownShow] = useState<boolean>(false);
+
+  const showDropdownHandler = () => {
+    setSortDropdownShow((prev) => !prev);
+  };
+
+  const hideDropdown = () => {
+    setSortDropdownShow(false);
+  };
+
   return (
     <div>
       <div className="action">
@@ -22,7 +35,8 @@ const Home = (): JSX.Element => {
               <span>Language</span>
               <FaCaretDown />
             </button>
-            <button className="relative">
+            <button className="relative" onClick={showDropdownHandler}>
+              {sortDropdownShow ? <SortDropdown /> : null}
               <span>Sort</span>
               <FaCaretDown />
             </button>

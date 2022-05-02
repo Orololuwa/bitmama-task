@@ -8,7 +8,7 @@ interface AuthState {
 }
 
 const initialState: AuthState = {
-  isLoggedIn: LocalStorage.get("access_token") || false,
+  isLoggedIn: !!LocalStorage.get("access_token"),
   loading: false,
   error: false
 };

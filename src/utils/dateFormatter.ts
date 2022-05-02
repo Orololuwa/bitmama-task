@@ -10,7 +10,7 @@ const dateFormatter = (date: Date): string => {
 
     return dayDifference === 0
       ? "Updated today"
-      : `Updated ${dayDifference} days ago`;
+      : `Updated ${dayDifference} day(s) ago`;
   }
 
   return `Updated on ${date.toDateString()}`;

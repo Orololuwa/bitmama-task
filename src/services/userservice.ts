@@ -3,7 +3,7 @@ import QueryString from "qs";
 
 export interface RepoQParams {
   per_page: number;
-  sort: "created" | "updated" | "pushed" | "fullname";
+  sort: "created" | "updated" | "pushed" | "fullname" | string;
 }
 
 class UserService {

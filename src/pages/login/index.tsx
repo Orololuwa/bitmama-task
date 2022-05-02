@@ -27,6 +27,7 @@ const Login = (): JSX.Element => {
       dispatch(loginSuccess(true));
 
       navigate("/", { replace: true });
+      window.location.reload();
     } catch (err) {
       dispatch(loginError());
       addToast("Error loging in! Please try again", {

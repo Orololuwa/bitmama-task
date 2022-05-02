@@ -30,7 +30,7 @@ const Layout = (): JSX.Element => {
         ]);
         dispatch(setRepo(repos.data));
         dispatch(setUser(user.data));
-        setLoading(false)
+        setLoading(false);
       } catch (err) {
         console.log(err);
         setLoading(false);
@@ -47,7 +47,12 @@ const Layout = (): JSX.Element => {
           <Aside />
           <Nav />
           <Content>
-            <Outlet />
+            <Outlet
+              context={{
+                onChange: setRepoQueryParams,
+                currentOption: repoQueryParams.sort
+              }}
+            />
           </Content>
         </div>
       </div>

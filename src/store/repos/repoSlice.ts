@@ -116,7 +116,7 @@ const initialState: RepoState = {
 
 const RepoSlice = createSlice({
   name: "repo",
-  initialState,
+  initialState: initialState,
   reducers: {
     setRepo: (state, action: PayloadAction<RepoData[]>) => {
       state.data = action.payload;
