@@ -5,7 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import store from "./store";
 import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { ToastProvider } from "react-toast-notifications";
 
 const root = ReactDOM.createRoot(
@@ -14,11 +14,11 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
+      <HashRouter>
         <ToastProvider placement="top-center" autoDismiss>
           <App />
         </ToastProvider>
-      </BrowserRouter>
+      </HashRouter>
     </Provider>
   </React.StrictMode>
 );
