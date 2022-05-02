@@ -5,7 +5,7 @@ const Aside = (): JSX.Element | null => {
   const user = useAppSelector((state) => state.user);
 
   return user ? (
-    <aside className="md:absolute top-10 left-10 lg:left-20 xl:left-80 px-4 py-4 md:py-0 w-80 bg-transparent z-10">
+    <aside className="md:absolute top-10 left-10 lg:left-20 px-4 py-4 md:py-0 w-80 bg-transparent z-10">
       <div className="w-full flex items-center gap-4 md:block">
         <img
           src={user.data?.avatar_url}

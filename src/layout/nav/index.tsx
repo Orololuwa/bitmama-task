@@ -6,7 +6,7 @@ const Nav = (): JSX.Element => {
   const data = useAppSelector((state) => state.user.data);
 
   return (
-    <nav className="flex md:pl-96 lg:pl-[420px] xl:pl-[650px] relative overflow-y-scroll no-scrollbar border-b-2">
+    <nav className="flex md:pl-96 lg:pl-[420px] relative overflow-y-scroll no-scrollbar border-b-2">
       <div className="flex mt-4 w-full">
         <CustomLink to="/overview">
           <span className="flex gap-2 items-center">
