@@ -9,23 +9,19 @@ const Login = lazy(() => import("pages/login"));
 
 const routes: RouteObject[] = [
   {
-    element: <Layout />,
+    element: (
+      <PrivateRoute>
+        <Layout />
+      </PrivateRoute>
+    ),
     path: "/",
     children: [
       {
-        element: (
-          <PrivateRoute>
-            <Home />
-          </PrivateRoute>
-        ),
+        element: <Home />,
         index: true
       },
       {
-        element: (
-          <PrivateRoute>
-            <Home />
-          </PrivateRoute>
-        ),
+        element: <Home />,
         path: "*"
       }
     ]

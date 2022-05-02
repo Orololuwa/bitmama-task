@@ -1,6 +1,5 @@
 import axios, { AxiosRequestHeaders } from "axios";
 import ExpirySession from "utils/expirysession";
-import LocalStorage from "utils/localstorage";
 
 export const BASE_URL = process.env.REACT_APP_BASE_URL;
 axios.defaults.baseURL = BASE_URL;
@@ -13,6 +12,7 @@ const authInstance = axios.create({
 //UserService or Private Calls
 export const authHeader = async (headers: AxiosRequestHeaders | undefined) => {
   const accessToken = await ExpirySession.get("access_token");
+  if (accessToken === null) window.location.reload();
   return {
     ...headers,
     Authorization: `Bearer ${accessToken}`

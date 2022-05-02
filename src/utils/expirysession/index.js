@@ -16,7 +16,7 @@ class ExpirySession {
     return null;
   };
 
-  static set = (key, value, expirationInSeconds = 2700) => {
+  static set = (key, value, expirationInSeconds = 60) => {
     let expirationDate = new Date(
       new Date().getTime() + 1000 * expirationInSeconds
     ); // create new expiring date.
@@ -29,8 +29,6 @@ class ExpirySession {
 
   static clear = () => {
     LocalStorage.remove("access_token");
-    LocalStorage.remove("isLoggedIn");
-    LocalStorage.remove("user");
   };
 }
 
