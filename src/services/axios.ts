@@ -12,7 +12,6 @@ const authInstance = axios.create({
 //UserService or Private Calls
 export const authHeader = async (headers: AxiosRequestHeaders | undefined) => {
   const accessToken = await ExpirySession.get("access_token");
-  if (accessToken === null) window.location.reload();
   return {
     ...headers,
     Authorization: `Bearer ${accessToken}`
